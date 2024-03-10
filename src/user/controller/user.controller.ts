@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { UserService } from './user.service';
-import { UserDTO } from './user.dto';import { query } from 'express';
+import { UserService } from '../service/user.service';
+import { UserDTO } from '../dto/user.dto';import { query } from 'express';
 
 @Controller('user')
 export class UserController {
@@ -12,8 +12,8 @@ export class UserController {
     }
     
     @Post()
-    public postUsers(@Body() user : UserDTO) {
-        return this.userService.postUsers(user);
+    public postUser(@Body() user : UserDTO) {
+        return this.userService.postUser(user);
     }
 
     @Get(':id')
