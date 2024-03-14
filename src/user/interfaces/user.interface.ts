@@ -34,8 +34,14 @@ export class User extends Document {
     password: string;
     
     @IsNumber()
+    @Prop({
+        required:true,
+    })
     age: number;
     
+    @Prop({
+        required:true,
+    })
     gender: Gender;
 }
 

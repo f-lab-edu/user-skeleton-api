@@ -30,3 +30,12 @@ export enum Gender {
     MALE = 'Male',
     FEMALE = 'Female',
 }
+
+export class UpdateUserDTO {
+    @IsString()
+    name: string;
+    
+    @IsString()
+    @Matches('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,30}$')
+    password: string;
+}
